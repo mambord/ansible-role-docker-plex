@@ -1,0 +1,15 @@
+---
+
+# general settings
+docker_plex_timezone: 'Europe/Zurich'
+docker_plex_host_ip: '192.168.1.2'
+
+
+# basedir where the data and docker-compose.yml is stored
+docker_plex_base_dir: '/opt/plex'
+
+# hostname
+docker_plex_hostname: 'my.plex'
+
+# always pull the images before starting
+docker_plex_pull: no

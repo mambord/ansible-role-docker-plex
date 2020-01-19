@@ -1,0 +1,27 @@
+# {{ ansible_managed }}
+version: '2'
+services:
+  plex:
+    image: plexinc/pms-docker
+    container_name: plex
+    ports:
+      - 32400:32400/tcp
+      - 3005:3005/tcp
+      - 8324:8324/tcp
+      - 32469:32469/tcp
+      - 1900:1900/udp
+      - 32410:32410/udp
+      - 32412:32412/udp
+      - 32413:32413/udp
+      - 32414:32414/udp
+    environment:
+      - TZ={{ docker_plex_timezone }}
+      - ADVERTISE_IP=https://{{ docker_plex_host_ip }}:32400/
+{% if docker_plex_claim_token is defined %}
+      - PLEX_CLAIM={{ docker_plex_claim_token }}
+{% endif %}
+    hostname: {{ docker_plex_hostname }}
+    volumes:
+      - {{ docker_plex_base_dir }}/config:/config
+      - {{ docker_plex_base_dir }}/transcode:/transcode
+      - {{ docker_plex_base_dir }}/data:/mnt/plex
