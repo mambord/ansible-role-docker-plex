@@ -27,6 +27,14 @@ The role writes a folder structure as follows:
 └── docker-compose.yaml
 ```
 
+### User & Group
+Uid/Gid for the plex user in the container. Data directory is chowned by gid.
+```yaml
+# plex user & group
+docker_plex_uid: 1000
+docker_plex_gid: 1000
+```
+
 ### Docker specific
 ```yaml
 # always pull the image

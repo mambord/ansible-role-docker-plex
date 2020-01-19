@@ -17,6 +17,8 @@ services:
     environment:
       - TZ={{ docker_plex_timezone }}
       - ADVERTISE_IP=https://{{ docker_plex_host_ip }}:32400/
+      - PLEX_UID={{ docker_plex_gid }}
+      - PLEX_GID={{ docker_plex_gid }}
 {% if docker_plex_claim_token is defined %}
       - PLEX_CLAIM={{ docker_plex_claim_token }}
 {% endif %}

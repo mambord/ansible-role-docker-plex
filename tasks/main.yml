@@ -4,7 +4,9 @@
   file:
     path: "{{ docker_plex_base_dir }}/{{ item }}"
     state: directory
-    mode: 0755
+    mode: 0774
+    group: "{{ docker_plex_gid }}"
+    recurse: yes
   with_items:
     - data
     - config
