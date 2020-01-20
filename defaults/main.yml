@@ -4,6 +4,9 @@
 docker_plex_timezone: 'Europe/Zurich'
 docker_plex_host_ip: '192.168.1.2'
 
+# version tag, see https://hub.docker.com/r/plexinc/pms-docker/tags
+docker_plex_image_tag: latest
+
 # plex user & group
 docker_plex_uid: 1000
 docker_plex_gid: 1000
@@ -13,6 +16,3 @@ docker_plex_base_dir: '/opt/plex'
 
 # hostname
 docker_plex_hostname: 'my.plex'
-
-# always pull the images before starting
-docker_plex_pull: no

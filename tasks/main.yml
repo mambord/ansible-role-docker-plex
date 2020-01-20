@@ -5,6 +5,7 @@
     path: "{{ docker_plex_base_dir }}/{{ item }}"
     state: directory
     mode: 0774
+    owner: "{{ docker_plex_uid }}"
     group: "{{ docker_plex_gid }}"
     recurse: yes
   with_items:
@@ -20,4 +21,3 @@
 - name: control container
   docker_compose:
     project_src: "{{ docker_plex_base_dir }}"
-    pull: "{{ docker_plex_pull }}"

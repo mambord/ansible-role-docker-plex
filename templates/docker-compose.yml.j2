@@ -2,7 +2,7 @@
 version: '2'
 services:
   plex:
-    image: plexinc/pms-docker
+    image: plexinc/pms-docker:{{ docker_plex_image_tag }}
     container_name: plex
     ports:
       - 32400:32400/tcp

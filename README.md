@@ -3,12 +3,18 @@ This role configures and starts a docker-compose based plex server. It uses the 
 
 ## Defaults
 
-### Plex specific
+### Plex settings
 
 ```yaml
 docker_plex_timezone: 'Europe/Zurich'
 docker_plex_host_ip: '192.168.1.2'
 docker_plex_hostname: 'my.plex'
+```
+
+### Image tag
+```yaml
+# version tag, see https://hub.docker.com/r/plexinc/pms-docker/tags
+docker_plex_image_tag: latest
 ```
 
 ### Folder structure
@@ -28,17 +34,11 @@ The role writes a folder structure as follows:
 ```
 
 ### User & Group
-Uid/Gid for the plex user in the container. Data directory is chowned by gid.
+Uid/Gid for the plex user in the container. Directories on host are chowned by uid:gid.
 ```yaml
 # plex user & group
 docker_plex_uid: 1000
 docker_plex_gid: 1000
-```
-
-### Docker specific
-```yaml
-# always pull the image
-docker_plex_pull: no
 ```
 
 ## Claim token
